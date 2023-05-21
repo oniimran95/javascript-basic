@@ -7,6 +7,19 @@
     <title>Javascript Basic - class 1</title>
   </head>
   <body>
-    <script></script>
+    <h1 id="name">Imran Hossain</h1>
+    <button onclick="buttonClick()">Name Change</button>
+
+    <script>
+      function buttonClick() {
+        let name = document.getElementById("name").innerText;
+
+        if (name == "Imran Hossain") {
+          document.getElementById("name").innerText = "Farjana Khanom";
+        } else {
+          document.getElementById("name").innerText = "Imran Hossain";
+        }
+      }
+    </script>
   </body>
 </html>
