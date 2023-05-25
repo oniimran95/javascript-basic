@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Basic - Light on/off</title>
+  </head>
+  <body>
+    <img src="images/pic_bulboff.gif" alt="" id="images" />
+    <button id="turnOnOff" onclick="buttonOnOff()">Turn on the light</button>
+    <script>
+      function buttonOnOff() {
+        let imageSrc = document.getElementById("images").src;
+        console.log(imageSrc);
+        if (imageSrc == "http://127.0.0.1:5500/class2/images/pic_bulboff.gif") {
+          document.getElementById("images").src = "images/pic_bulbon.gif";
+          document.getElementById("turnOnOff").innerText = "Turn off the light";
+        } else {
+          document.getElementById("images").src = "images/pic_bulboff.gif";
+          document.getElementById("turnOnOff").innerText = "Turn on the light";
+        }
+      }
+    </script>
+  </body>
+</html>
