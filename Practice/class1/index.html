@@ -7,20 +7,44 @@
     <title>Javascript Basic</title>
   </head>
   <body>
-    <img src="images/pic_bulboff.gif" alt="" id="images" />
-    <button id="turnOnOff" onclick="buttonOnOff()">turn on the light</button>
+    <div id="userTable"></div>
     <script>
-      function buttonOnOff() {
-        let imageSrc = document.getElementById("images").src;
-        console.log(imageSrc);
-        if (imageSrc == "http://127.0.0.1:5500/class1/images/pic_bulboff.gif") {
-          document.getElementById("images").src = "images/pic_bulbon.gif";
-          document.getElementById("turnOnOff").innerText = "turn off the light";
-        } else {
-          document.getElementById("images").src = "images/pic_bulboff.gif";
-          document.getElementById("turnOnOff").innerText = "turn on the light";
-        }
+      let userInfo = [
+        {
+          name: "Imran",
+          age: "30",
+          designation: "Software Engineer",
+        },
+        {
+          name: "Oni",
+          age: "30",
+          designation: "Software Engineer",
+        },
+        {
+          name: "Imran",
+          age: "30",
+          designation: "Software Engineer",
+        },
+      ];
+      let userElement = `
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Designation</th>
+        </tr>  
+    `;
+      for (let i = 0; i < userInfo.length; i++) {
+        userElement += `
+        <tr>
+          <td>${userInfo[i].name}</td>
+          <td>${userInfo[i].age}</td>
+          <td>${userInfo[i].designation}</td>
+          </tr>
+      `;
       }
+      userElement += `</table>`;
+      document.getElementById("userTable").innerHTML = userElement;
     </script>
   </body>
 </html>

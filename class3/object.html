@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript - Object</title>
+  </head>
+  <body>
+    <div id="userTable"></div>
+
+    <script>
+      let userInfo = {
+        name: "Imran",
+        age: "30",
+        designation: "Software Engineer",
+      };
+
+      let tableElement = `
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Profession</th>
+            </tr>
+            <tr>
+                <td>${userInfo.name}</td>
+                <td>${userInfo.age}</td>
+                <td>${userInfo.designation}</td>
+            </tr>
+        </table>
+      `;
+
+      document.getElementById("userTable").innerHTML = tableElement;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript - Array of Object</title>
+  </head>
+  <body>
+    <div id="userTable"></div>
+
+    <script>
+      let userInfo = [
+        {
+          name: "Imran",
+          age: "30",
+          designation: "Software Engineer",
+        },
+        {
+          name: "Oni",
+          age: "28",
+          designation: "Junior Software Engineer",
+        },
+        {
+          name: "Shanta",
+          age: "23",
+          designation: "Junior Software Engineer",
+        },
+        {
+          name: "Borhan",
+          age: "15",
+          designation: "Student",
+        },
+      ];
+
+      let tableElement = `
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Designation</th>
+          </tr>
+      `;
+
+      for (let i = 0; i < userInfo.length; i++) {
+        tableElement += `
+          <tr>
+            <td>${userInfo[i].name}</td>
+            <td>${userInfo[i].age}</td>
+            <td>${userInfo[i].designation}</td>
+          </tr>
+        `;
+      }
+
+      tableElement += `</table>`;
+
+      document.getElementById("userTable").innerHTML = tableElement;
+    </script>
+  </body>
+</html>
