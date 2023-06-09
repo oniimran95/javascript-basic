@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .del-btn {
+        color: red;
+        cursor: pointer;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter Name" id="name" />
+    <input type="text" placeholder="Enter Email" id="email" /><br /><br />
+    <textarea placeholder="Enter Address" id="address" cols="45"></textarea
+    ><br /><br />
+
+    <button type="button" id="addUser">Add User</button>
+
+    <br />
+    <br />
+    <br />
+
+    <table border="1" style="border-collapse: collapse">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="userData"></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          method: "GET",
+          url: "https://jsonplaceholder.typicode.com/users",
+          dataType: "json",
+          success: function (res) {
+            //console.log(res, "res......");
+            res.forEach((user) => {
+              let row = `
+                        <tr>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td>${
+                              user.address.city + " " + user.address.street
+                            }</td>
+                            <td class="del-btn">X</td>
+                        </tr>
+                    `;
+              $("#userData").append(row);
+            });
+          },
+          error: function (xhr, status, error) {
+            alert("Something went wrong");
+          },
+        });
+
+        $("#addUser").click(function () {
+          let name = $("#name").val();
+          let email = $("#email").val();
+          let address = $("#address").val();
+          console.log(name, "name");
+
+          let row = `
+                <tr>
+                    <td>${name}</td>
+                    <td>${email}</td>
+                    <td>${address}</td>
+                    <td class="del-btn">X</td>
+                </tr>
+            `;
+          $("#userData").append(row);
+
+          $("#name").val("");
+          $("#email").val("");
+          $("#address").val("");
+        });
+
+        $(document).on("click", ".del-btn", function () {
+          $(this).parent().remove();
+        });
+      });
+    </script>
+  </body>
+</html>
