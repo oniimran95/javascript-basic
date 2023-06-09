@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery Basic</title>
+  </head>
+  <body>
+    <h1 id="name">Imran Hossain</h1>
+    <h2 id="santa">shanta</h2>
+    <button onclick="buttonClick()">name change</button>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+      function buttonClick() {
+        let name = $("#name").text();
+        if (name == "Imran Hossain") {
+          $("#name").text("Farjana khanom");
+        } else {
+          $("#name").text("Imran Hossain");
+        }
+        $("#santa").toggle(5000);
+      }
+    </script>
+  </body>
+</html>

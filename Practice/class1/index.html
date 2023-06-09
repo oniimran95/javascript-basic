@@ -17,34 +17,41 @@
         },
         {
           name: "Oni",
-          age: "30",
-          designation: "Software Engineer",
+          age: "27",
+          designation: "Junior Software Engineer",
         },
         {
-          name: "Imran",
-          age: "30",
-          designation: "Software Engineer",
+          name: "Shanta",
+          age: "23",
+          designation: " junior Software Engineer",
+        },
+        {
+          name: "Borhan",
+          age: "15",
+          designation: "Student",
         },
       ];
-      let userElement = `
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Designation</th>
-        </tr>  
-    `;
-      for (let i = 0; i < userInfo.length; i++) {
-        userElement += `
+      let tableElement = `
+      <table>
         <tr>
-          <td>${userInfo[i].name}</td>
-          <td>${userInfo[i].age}</td>
-          <td>${userInfo[i].designation}</td>
-          </tr>
+          <th>name</th>
+           <th>age</th>
+            <th>designation</th>
+        </tr>
+
       `;
+      for (let i = 0; i < userInfo.length; i++) {
+        tableElement += `
+          <tr>
+           <td>${userInfo[i].name}</td>
+            <td>${userInfo[i].age}</td>
+             <td>${userInfo[i].designation}</td> 
+          </tr>
+
+        `;
       }
-      userElement += `</table>`;
-      document.getElementById("userTable").innerHTML = userElement;
+      tableElement += `</table>`;
+      document.getElementById("userTable").innerHTML = tableElement;
     </script>
   </body>
 </html>

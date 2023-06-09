@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Javascript - Array of Object</title>
+    <title>Javascript - Array of Object using forEach</title>
   </head>
   <body>
     <div id="userTable"></div>
@@ -43,8 +43,7 @@
           </tr>
       `;
 
-      for (let i = 0; i < userInfo.length; i++) {
-        const item = userInfo[i];
+      userInfo.forEach((item, i) => {
         tableElement += `
           <tr>
             <td>${i + 1}</td>
@@ -53,7 +52,7 @@
             <td>${item.designation}</td>
           </tr>
         `;
-      }
+      });
 
       tableElement += `</table>`;
 
